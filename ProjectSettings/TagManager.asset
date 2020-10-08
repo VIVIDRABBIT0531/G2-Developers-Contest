@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Citizen
+  - Vehicle
+  - ForkLift
+  - Citizen2
+  - Light
   layers:
   - Default
   - TransparentFX
