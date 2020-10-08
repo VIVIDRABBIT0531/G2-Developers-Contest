@@ -10,13 +10,16 @@ public class Hacking : MonoBehaviour
     public bool CanStart;
     public bool CanStop;
     public bool isLift;
-    public bool TurnOff;
+    public bool isTurnOff;
+    public GameObject AnimationSystem;
+    public GameObject AlertLevelSystem;
+
     // Start is called before the first frame update
     void Start()
     {
         CanStart = true;
         CanStop = false;
-        TurnOff = true;
+        isTurnOff = true;
     }
 
     // Update is called once per frame
@@ -74,12 +77,14 @@ public class Hacking : MonoBehaviour
     }
     public void LightHack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && TurnOff)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isTurnOff)
         {
             Debug.Log("Lighthack!");
             HackTarget.transform.GetChild(0).gameObject.GetComponent<Light>().enabled = false;
+            HackTarget.tag = "Untagged";
+            AnimationSystem.GetComponent<AnimationSystem>().LightAnimation();
+            AlertLevelSystem.GetComponent<AlertLevelSystem>().LightBreakAlertLevel();
         }
-
     }
 
 }
