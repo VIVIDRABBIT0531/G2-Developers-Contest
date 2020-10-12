@@ -9,6 +9,7 @@ TagManager:
   - ForkLift
   - Citizen2
   - Light
+  - Object
   layers:
   - Default
   - TransparentFX
